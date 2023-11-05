@@ -2,7 +2,7 @@
 
 1. Node.js, npm, Android Studio 설치
 2. yarn 설치
-   - `npm install =g yarn`
+   - `npm install -g yarn`
 3. Expo 설치
    - `npm install -g expo cli`
 4. Android Studio Amulator 켜기
