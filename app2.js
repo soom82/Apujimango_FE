@@ -1,7 +1,5 @@
-
-
 import React, { useState } from 'react';
-import { StyleSheet, Text, View ,Image, Button ,ScrollView,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View ,Image,SafeAreaView,ScrollView } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
 export default function App() {
@@ -20,15 +18,11 @@ export default function App() {
   return (
     <View style={styles.container }>
       <View style={{ paddingHorizontal : '3%', paddingTop: '2%',flexDirection : 'row'}}>
-        
-        <TouchableOpacity >
-        {/* onPress={() => navigation.navigate('app2.js')} */}
-          <Image
-            style={{ width: 20, height: 20, }}
+        <Image
+            style={{ width: '3%', height: 20, }}
             source={require('./assets/lessthan_image.png')}
           />
-        </TouchableOpacity>
-        <Text style = {{ fontSize: 10 , color:'gray', paddingBottom: '10%', paddingTop : 2}}> 이전</Text>
+          <Text style = {{ fontSize: 10 , color:'gray', paddingBottom: '10%', paddingTop : 2}}> 이전</Text>
         
       </View>
       <Text style={{ paddingHorizontal : '8%', fontSize: 20, fontWeight: 'bold', textAlign:'left' }}>질환 백과</Text>
@@ -132,3 +126,4 @@ const styles = StyleSheet.create({
 
   },
 });
+
