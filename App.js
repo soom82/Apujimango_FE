@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View ,Image, Button ,ScrollView,TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
