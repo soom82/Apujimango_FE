@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { SearchBar } from "react-native-elements";
 
 export default function App() {
   const [searchText, setSearchText] = useState("");
-
-  const tableData = {
-    tableHead: ["Head", "Head2", "Head3", "Head4", "Head5"],
-    tableData: [
-      ["감염성질환", "건강증진", "귀코목질환", "근골격질환", "눈질환"],
-      ["뇌신경정신질환", "소아청소년질환", "소화기질환", "순환기질환"],
-      ["신장비뇨기질환", "여성질환", "유방내분비질환", "유전질환", "응급질환"],
-      ["종양혈액질환", "치과질환", "피부질환", "호흡기질환", "기타"],
-    ],
-  };
 
   return (
     <View style={styles.container}>
@@ -24,10 +22,12 @@ export default function App() {
           flexDirection: "row",
         }}
       >
-        <Image
-          style={{ width: "3%", height: 20 }}
-          source={require("./assets/lessthan_image.png")}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
+          <Image
+            style={{ width: 20, height: 20 }}
+            source={require("./assets/lessthan_image.png")}
+          />
+        </TouchableOpacity>
         <Text
           style={{
             fontSize: 10,
@@ -50,7 +50,7 @@ export default function App() {
       >
         질환 백과
       </Text>
-      <View style={{ paddingHorizontal: "5%", width: 450 }}>
+      <View style={{ width: 400, alignItems: "center" }}>
         <SearchBar
           placeholder="만성기침"
           placeholderTextColor={"black"}
@@ -62,14 +62,13 @@ export default function App() {
         />
       </View>
 
-      <ScrollView style={{ borderRadius: 50 }}>
+      <ScrollView style={{ height: 1000, borderRadius: 50, elevation: 10 }}>
         <View
           style={{
             width: "100%",
-            height: 550,
+            height: 900,
             borderWidth: 1,
             elevation: 10,
-            marginTop: 20,
             borderColor: "#FDFDFF",
             borderTopStartRadius: 50,
             borderTopEndRadius: 50,
