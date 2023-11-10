@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { SearchBar } from "react-native-elements";
 import { Table, Row, Rows } from "react-native-table-component";
 
-export default function home() {
+export default function Encyclpedia_HomeScreen({ navigation }) {
   const [search, setSearch] = useState("");
 
   const tableData = {
@@ -42,6 +42,9 @@ export default function home() {
           value={search}
         />
       </View>
+
+      <Button title="이동" onPress={() => navigation.navigate("Detail")} />
+
       <View
         style={{
           width: "90%",
