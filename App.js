@@ -8,81 +8,65 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { SearchBar } from "react-native-elements";
 
 export default function App() {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row" }}>
-        <View
+      <View
+        style={{
+          paddingHorizontal: "3%",
+          paddingTop: "2%",
+          flexDirection: "row",
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
+          <Image
+            style={{ width: 20, height: 20 }}
+            source={require("./assets/lessthan_image.png")}
+          />
+        </TouchableOpacity>
+        <Text
           style={{
-            position: "absolute",
-            top: 50,
-            bottom: -50,
-            left: 0,
-            right: "75%",
-            borderColor: "#FDFDFF",
-            borderTopStartRadius: 20,
-            borderTopEndRadius: 20,
-            backgroundColor: "#F4F4F4",
+            fontSize: 10,
+            color: "gray",
+            paddingBottom: "10%",
+            paddingTop: 2,
           }}
         >
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate("App");
-            }}
-          >
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 13,
-                paddingLeft: 15,
-                paddingTop: 15,
-                color: "#959595",
-              }}
-            >
-              {" "}
-              약성분 분석{" "}
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            width: "25%",
-            height: 40,
-            marginTop: 50,
-            marginLeft: "25%",
-            borderColor: "#FDFDFF",
-            borderTopStartRadius: 20,
-            borderTopEndRadius: 20,
-            backgroundColor: "#FAA629",
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate("App");
-            }}
-          >
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 13,
-                paddingLeft: 20,
-                paddingTop: 15,
-                color: "#FFFFFF",
-              }}
-            >
-              {" "}
-              음식 분석{" "}
-            </Text>
-          </TouchableOpacity>
-        </View>
+          {" "}
+          이전
+        </Text>
+      </View>
+      <Text
+        style={{
+          paddingHorizontal: "8%",
+          fontSize: 20,
+          fontWeight: "bold",
+          textAlign: "left",
+        }}
+      >
+        질환 백과
+      </Text>
+      <View style={{ width: 400, alignItems: "center" }}>
+        <SearchBar
+          placeholder="만성기침"
+          placeholderTextColor={"black"}
+          style={{ fontSize: 14, color: "black" }}
+          containerStyle={styles.searchBarContainer}
+          inputContainerStyle={styles.searchBarInputContainer}
+          onChangeText={(text) => setSearchText(text)}
+          value={searchText}
+        />
       </View>
 
-      <View style={{ borderRadius: 50 }}>
+      <ScrollView style={{ height: 1000, borderRadius: 50, elevation: 10 }}>
         <View
           style={{
             width: "100%",
-            height: 610,
+            height: 900,
             borderWidth: 1,
             elevation: 10,
             borderColor: "#FDFDFF",
@@ -91,169 +75,161 @@ export default function App() {
             backgroundColor: "#FFFFFF",
           }}
         >
-          <Text
+          <View
             style={{
-              marginHorizontal: "27%",
-              color: "#858585",
-              marginVertical: 30,
-              marginBottom: 5,
-              fontSize: 12,
+              width: 50,
+              marginTop: 20,
+              marginHorizontal: "45%",
+              borderRadius: 10,
+              borderWidth: 2,
+              borderColor: "#F1F1F1",
             }}
-          >
-            2023/ 10/ 16 월요일 제조받았어요!{" "}
-          </Text>
+          />
+
           <Text
             style={{
-              marginHorizontal: "20%",
-              color: "black",
+              marginHorizontal: 40,
+              marginTop: 40,
               marginBottom: 10,
+              alignItems: "flex-start",
+              fontSize: 18,
               fontWeight: "bold",
-              fontSize: 16,
             }}
           >
-            우리 아이1의 레포트 분석 결과예요.{" "}
+            {" "}
+            기침 ( Cough ){" "}
+          </Text>
+          <View style={{ flexDirection: "row", marginHorizontal: "10%" }}>
+            <View
+              style={{
+                alignItems: "center",
+                marginHorizontal: 5,
+                width: "22%",
+                height: 24,
+                paddingVertical: 2,
+                borderRadius: 50,
+                backgroundColor: "#E1F4F5",
+              }}
+            >
+              <Text
+                style={{ paddingVertical: 2, fontSize: 12, color: "#48D1CC" }}
+              >
+                만성 기침
+              </Text>
+            </View>
+            <View
+              style={{
+                alignItems: "center",
+                marginHorizontal: 5,
+                width: "22%",
+                height: 24,
+                paddingVertical: 2,
+                borderRadius: 50,
+                backgroundColor: "#E1F4F5",
+              }}
+            >
+              <Text
+                style={{ paddingVertical: 2, fontSize: 12, color: "#48D1CC" }}
+              >
+                건조 기침
+              </Text>
+            </View>
+            <View
+              style={{
+                alignItems: "center",
+                marginHorizontal: 5,
+                width: "22%",
+                height: 24,
+                paddingVertical: 2,
+                borderRadius: 50,
+                backgroundColor: "#E1F4F5",
+              }}
+            >
+              <Text
+                style={{ paddingVertical: 2, fontSize: 12, color: "#48D1CC" }}
+              >
+                가래 기침
+              </Text>
+            </View>
+            <View
+              style={{
+                alignItems: "center",
+                marginHorizontal: 5,
+                width: "22%",
+                height: 24,
+                paddingVertical: 2,
+                borderRadius: 50,
+                backgroundColor: "#E1F4F5",
+              }}
+            >
+              <Text
+                style={{ paddingVertical: 2, fontSize: 12, color: "#48D1CC" }}
+              >
+                밤 기침
+              </Text>
+            </View>
+          </View>
+
+          <View style={{ alignItems: "center", marginVertical: 10 }}>
+            <Image source={require("./assets/page2_image.png")} />
+          </View>
+
+          <Text
+            style={{ marginVertical: 3, marginLeft: 40, fontWeight: "bold" }}
+          >
+            {" "}
+            정의{" "}
+          </Text>
+          <Text
+            style={{ marginVertical: 3, marginHorizontal: 50, fontSize: 12 }}
+          >
+            목에 이물질이나 분비물 등이 걸렸을 때 숨을 쉴 수 있게 걸린 물질을
+            밖으로 빼도록 하는 동작이에요.
           </Text>
 
-          <ScrollView style={{ height: 1000 }}>
-            <View
-              style={{
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 20,
-                width: "80%",
-                height: 35,
-                backgroundColor: "#ECF8F9",
-                borderRadius: 20,
-              }}
-            >
-              <Text
-                style={{
-                  paddingVertical: 6,
-                  paddingLeft: 30,
-                  paddingRight: 1,
-                  fontSize: 15,
-                }}
-              >
-                {" "}
-                🤧
-              </Text>
-              <Text
-                style={{
-                  paddingVertical: 5,
-                  alignSelf: "center",
-                  paddingLeft: 10,
-                  fontSize: 12,
-                  fontWeight: "bold",
-                }}
-              >
-                [감기] 콧물 증상이 있어요.
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 10,
-                width: "80%",
-                height: 35,
-                backgroundColor: "#ECF8F9",
-                borderRadius: 20,
-              }}
-            >
-              <Text
-                style={{
-                  paddingVertical: 6,
-                  paddingLeft: 30,
-                  paddingRight: 1,
-                  fontSize: 15,
-                }}
-              >
-                {" "}
-                🤒
-              </Text>
-              <Text
-                style={{
-                  paddingVertical: 5,
-                  alignSelf: "center",
-                  paddingLeft: 10,
-                  fontSize: 12,
-                  fontWeight: "bold",
-                }}
-              >
-                [감기] 미열이 있어요.
-              </Text>
-            </View>
+          <View
+            style={{
+              width: "80%",
+              borderColor: "#D3D3D3",
+              marginVertical: 5,
+              marginLeft: 40,
+              borderWidth: 0.3,
+            }}
+          />
 
-            <View
-              style={{
-                width: "80%",
-                marginBottom: 30,
-                marginTop: 30,
-                borderColor: "#D3D3D3",
-                marginLeft: 40,
-                borderWidth: 0.3,
-              }}
-            />
+          <Text
+            style={{ marginVertical: 3, marginLeft: 40, fontWeight: "bold" }}
+          >
+            {" "}
+            원인{" "}
+          </Text>
+          <Text
+            style={{ marginVertical: 3, marginHorizontal: 50, fontSize: 12 }}
+          >
+            기도에 이물질이 걸리는 상황은 다양하기 때문에 원인 역시 다양해요.{" "}
+            {"\n"}
+            {"\n"}- 역류성 식도염 등 위에 분비물에 의한 기침 {"\n"}- 편도염,
+            인후염 등 목의 염증에 의한 기침 {"\n"}- 비염, 후비루 등 콧물에 의한
+            기침 {"\n"}- 외부 이물질의 기도 흡인에 의한 기침 {"\n"}
+          </Text>
 
-            <Text
-              style={{ alignSelf: "center", fontWeight: "bold", fontSize: 18 }}
-            >
-              이런 음식들을 조심해주세요.{" "}
-            </Text>
+          <View
+            style={{
+              width: "80%",
+              borderColor: "#D3D3D3",
+              marginLeft: 40,
+              borderWidth: 0.3,
+            }}
+          />
 
-            <View
-              style={{
-                alignItems: "center",
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 10,
-                width: "80%",
-                height: 80,
-                backgroundColor: "#ffeacc",
-                borderRadius: 15,
-              }}
-            >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-            </View>
-
-            <View
-              style={{
-                alignItems: "center",
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 10,
-                width: "80%",
-                height: 80,
-                backgroundColor: "#e0d1ff",
-                borderRadius: 15,
-              }}
-            >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-            </View>
-
-            <View
-              style={{
-                alignItems: "center",
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 10,
-                width: "80%",
-                height: 80,
-                backgroundColor: "#d1ebbc",
-                borderRadius: 15,
-              }}
-            >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-            </View>
-          </ScrollView>
+          <Text
+            style={{ marginVertical: 5, marginLeft: 40, fontWeight: "bold" }}
+          >
+            {" "}
+            증상{" "}
+          </Text>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -261,8 +237,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
-    backgroundColor: "#A1E6EB",
+    paddingTop: "10%",
+    backgroundColor: "#f6f6f6",
   },
   searchBarContainer: {
     backgroundColor: "transparent",
