@@ -123,7 +123,7 @@ export default function App() {
               fontSize: 16,
             }}
           >
-            우리 아이1의 레포트 분석 결과예요.{" "}
+            우리 아이1의 레포트 분석 결과예dd요.{" "}
           </Text>
 
           <ScrollView style={{ height: 1000 }}>

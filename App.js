@@ -10,18 +10,6 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [searchText, setSearchText] = useState("");
-
-  const tableData = {
-    tableHead: ["Head", "Head2", "Head3", "Head4", "Head5"],
-    tableData: [
-      ["감염성질환", "건강증진", "귀코목질환", "근골격질환", "눈질환"],
-      ["뇌신경정신질환", "소아청소년질환", "소화기질환", "순환기질환"],
-      ["신장비뇨기질환", "여성질환", "유방내분비질환", "유전질환", "응급질환"],
-      ["종양혈액질환", "치과질환", "피부질환", "호흡기질환", "기타"],
-    ],
-  };
-
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row" }}>
