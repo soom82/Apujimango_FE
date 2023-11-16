@@ -12,7 +12,8 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [record, setRecord] = useState("• 아동 구내염");
+  // const [record, setRecord] = useState("• 아동 구내염");
+  const [record, setRecord] = useState("");
 
   return (
     <View style={styles.container}>
@@ -58,7 +59,7 @@ export default function App() {
               marginBottom: 5,
               height: 27,
               borderRadius: 40,
-              backgroundColor: "#ffeacc",
+              backgroundColor: "#E6E6E6",
               elevation: 3,
             }}
           >
@@ -83,6 +84,42 @@ export default function App() {
             </Text>
           </View>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
+          <View
+            style={{
+              flexDirection: "row",
+              width: 50,
+              marginLeft: 10,
+              marginBottom: 5,
+              height: 27,
+              borderRadius: 40,
+              backgroundColor: "#ffeacc",
+              elevation: 3,
+            }}
+          >
+            <Text
+              style={{
+                paddingTop: 5,
+                fontSize: 12,
+              }}
+            >
+              {" "}
+              👶🏻
+            </Text>
+            <Text
+              style={{
+                paddingTop: 8,
+                fontSize: 8,
+                fontWeight: "bold",
+              }}
+            >
+              {" "}
+              아이 2
+            </Text>
+          </View>
+        </TouchableOpacity>
+
         {/* 클릭시 새로운 아이 페이지 생성  */}
         <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
           <View
@@ -116,7 +153,7 @@ export default function App() {
       <View
         style={{
           position: "absolute",
-          top: 168,
+          top: 165,
           bottom: 540,
           left: 108,
           right: 108,
@@ -129,19 +166,29 @@ export default function App() {
       <View style={{ alignItems: "center" }}>
         <Image
           style={{ marginTop: 26, width: 160, height: 160, borderRadius: 100 }}
-          source={require("./assets/picture.png")}
+          source={require("./assets/picture_subtitude.png")} // 사진
         />
       </View>
+      <View
+        style={{
+          position: "absolute",
+          top: 323,
+          bottom: 477,
+          left: 152,
+          right: 152,
+          backgroundColor: "#8CDCE2",
+        }}
+      ></View>
 
       <Text
         style={{
           alignSelf: "center",
-          fontWeight: "bold",
-          fontSize: 20,
+          fontSize: 15,
           marginTop: 15,
+          color: "#AEAEAE",
         }}
       >
-        김꾸꾸
+        이름입력
       </Text>
 
       <View
@@ -162,9 +209,10 @@ export default function App() {
             marginLeft: 15,
             fontWeight: "bold",
             fontSize: 12,
+            color: "#AEAEAE",
           }}
         >
-          2008.02.13 {"\n"} &nbsp;&nbsp; (만 6세)
+          0000.00.00 {"\n"} &nbsp;&nbsp; (만 0세)
         </Text>
         <View
           style={{
@@ -180,12 +228,16 @@ export default function App() {
         <Text
           style={{
             marginTop: 10,
-            fontWeight: "bold",
+
             fontSize: 12,
           }}
         >
-          키 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 125 cm{"\n"}
-          몸무게 &nbsp;&nbsp;&nbsp; 14 kg
+          키 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{" "}
+          {/*125 cm*/}
+          <Text style={{ color: "#AEAEAE", fontSize: 17.5 }}>------</Text>
+          {"\n"}
+          몸무게 &nbsp;&nbsp; {/*14 kg*/}
+          <Text style={{ color: "#AEAEAE", fontSize: 18 }}>------</Text>
         </Text>
       </View>
 
@@ -238,6 +290,7 @@ export default function App() {
             />
           </SafeAreaView>
 
+          {/* 진료 내용
           <View
             style={{
               flex: 0.66,
@@ -247,7 +300,7 @@ export default function App() {
               marginLeft: 5,
               borderWidth: 0.3,
             }}
-          />
+          /> */}
 
           <Text
             style={{
@@ -259,7 +312,7 @@ export default function App() {
               marginRight: 15,
             }}
           >
-            2023.08.10 진료
+            {/* 진료 날짜 */}
           </Text>
         </View>
 
@@ -316,9 +369,11 @@ export default function App() {
               fontWeight: "bold",
             }}
           >
-            • 독감 예방 접종
+            {/* 접종 종류 */}
           </Text>
 
+          {/* 
+          중간선
           <View
             style={{
               width: "42%",
@@ -327,7 +382,7 @@ export default function App() {
               marginLeft: 5,
               borderWidth: 0.3,
             }}
-          />
+          /> */}
 
           <Text
             style={{
@@ -337,7 +392,7 @@ export default function App() {
               marginLeft: 5,
             }}
           >
-            2022.12.10 완료
+            {/* 접종 날짜 */}
           </Text>
         </View>
 
@@ -381,9 +436,7 @@ export default function App() {
 
         <View style={{ marginHorizontal: "12%" }}>
           <Text style={{ marginVertical: 3, fontSize: 8.5 }}>
-            5살 때 인플루엔자균 뇌수막염에 의한 소아뇌전증 합병증을 겪어 2달 전
-            완치하였음. 다만, 재발 가능성을 염두하여 1세대 항히스타민제의 섭취를
-            피할 것을 의사 소견으로 받음.
+            {/* 특이사항 내용 */}
           </Text>
         </View>
 
@@ -452,7 +505,7 @@ export default function App() {
                   style={{
                     fontSize: 14,
                     marginLeft: 13,
-                    marginVertical: 9,
+                    marginVertical: 10,
                     color: "white",
                     elevation: 3,
                   }}

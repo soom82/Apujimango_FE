@@ -116,7 +116,7 @@ export default function App() {
       <View
         style={{
           position: "absolute",
-          top: 168,
+          top: 165,
           bottom: 540,
           left: 108,
           right: 108,
@@ -132,7 +132,16 @@ export default function App() {
           source={require("./assets/picture.png")}
         />
       </View>
-
+      <View
+        style={{
+          position: "absolute",
+          top: 323,
+          bottom: 477,
+          left: 152,
+          right: 152,
+          backgroundColor: "#8CDCE2",
+        }}
+      ></View>
       <Text
         style={{
           alignSelf: "center",
@@ -417,27 +426,19 @@ export default function App() {
         <View
           style={{ marginLeft: "12%", flexDirection: "row", marginBottom: 20 }}
         >
-          <View
-            style={{
-              width: 42,
-              height: 42,
-              borderRadius: 12,
-              backgroundColor: "#fbfbfb",
-              elevation: 3,
-            }}
-          >
+          <View style={{ alignItems: "center" }}>
             <Image
-              style={{
-                width: 30,
-                height: 30,
-                borderRadius: 12,
-                marginHorizontal: 5,
-                marginVertical: 5,
-              }}
-              source={require("./assets/x.png")}
+              style={{ width: 50, height: 50, borderRadius: 12 }}
+              source={require("./assets/food_egg.png")}
             />
           </View>
-          <View style={{ alignItems: "center", marginLeft: 13 }}>
+          <View style={{ alignItems: "center", marginLeft: 15 }}>
+            <Image
+              style={{ width: 50, height: 50, borderRadius: 12 }}
+              source={require("./assets/milk.png")}
+            />
+          </View>
+          <View style={{ alignItems: "center", marginLeft: 15 }}>
             <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
               <View
                 style={{
@@ -445,14 +446,13 @@ export default function App() {
                   height: 42,
                   borderRadius: 12,
                   backgroundColor: "#8CDCE2",
-                  elevation: 3,
                 }}
               >
                 <Text
                   style={{
-                    fontSize: 14,
-                    marginLeft: 13,
-                    marginVertical: 9,
+                    fontSize: 15,
+                    marginLeft: 12,
+                    marginVertical: 10,
                     color: "white",
                     elevation: 3,
                   }}
