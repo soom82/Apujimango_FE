@@ -52,11 +52,11 @@ const BottomTabNavigation = () => {
           // headerRight: (props) => <AlertButton {...props} />,
           headerShown: false,
           tabBarStyle: {
+            elevation: 20,
             height: 63,
             borderTopLeftRadius: 15,
             borderTopRightRadius: 15,
             borderTopWidth: 0,
-            elevation: 20,
           },
         }}
       />
