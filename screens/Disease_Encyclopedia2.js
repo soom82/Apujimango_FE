@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 
-export const Disease_Encyclopedia2 = ({}) => {
+export const Disease_Encyclopedia2 = ({ navigation }) => {
   const [search, setSearch] = useState("만성기침");
 
   const updateSearch = (search) => {
@@ -21,34 +21,53 @@ export const Disease_Encyclopedia2 = ({}) => {
     <View style={styles.container}>
       {/* <View
         style={{
-          paddingHorizontal: "3%",
-          paddingTop: "2%",
+          marginTop: 40,
           flexDirection: "row",
         }}
+      > */}
+      <TouchableOpacity
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginTop: 40,
+          marginLeft: 10,
+          //   textAlign: "center",
+        }}
+        onPress={() => navigation.goBack()}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
-          <Image
-            style={{ width: 20, height: 20 }}
-            source={require("../assets/lessthan_image.png")}
-          />
-        </TouchableOpacity>
+        <Image
+          style={{ width: 20, height: 20 }}
+          source={require("../assets/lessthan_image.png")}
+        />
         <Text
           style={{
-            fontSize: 10,
-            color: "gray",
-            paddingBottom: "10%",
-            paddingTop: 2,
+            fontSize: 15,
+            color: "#818181",
+            // paddingBottom: "10%",
+            // paddingTop: 2,
           }}
         >
           {" "}
           이전
         </Text>
-      </View> */}
+      </TouchableOpacity>
+      {/* <Text
+        style={{
+          fontSize: 15,
+          color: "#818181",
+          // paddingBottom: "10%",
+          // paddingTop: 2,
+        }}
+      >
+        {" "}
+        이전
+      </Text> */}
+      {/* </View> */}
 
       <Text
         style={{
           marginLeft: 35,
-          marginTop: 100,
+          marginTop: 60,
           fontSize: 20,
           fontWeight: "bold",
         }}
