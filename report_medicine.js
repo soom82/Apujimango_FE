@@ -4,24 +4,11 @@ import {
   Text,
   View,
   Image,
-  Button,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
 
 export default function App() {
-  const [searchText, setSearchText] = useState("");
-
-  const tableData = {
-    tableHead: ["Head", "Head2", "Head3", "Head4", "Head5"],
-    tableData: [
-      ["감염성질환", "건강증진", "귀코목질환", "근골격질환", "눈질환"],
-      ["뇌신경정신질환", "소아청소년질환", "소화기질환", "순환기질환"],
-      ["신장비뇨기질환", "여성질환", "유방내분비질환", "유전질환", "응급질환"],
-      ["종양혈액질환", "치과질환", "피부질환", "호흡기질환", "기타"],
-    ],
-  };
-
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row" }}>
@@ -1567,28 +1554,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     backgroundColor: "#A1E6EB",
-  },
-  searchBarContainer: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    borderBottomWidth: 0,
-    borderTopWidth: 0,
-    borderRadius: 20,
-    width: "90%",
-    height: 65,
-  },
-  searchBarInputContainer: {
-    backgroundColor: "white",
-    borderRadius: 20,
-    borderColor: "gray",
-    elevation: 10,
-    width: "100%",
-    height: 35,
-    marginVertical: 10,
-  },
-
-  text: {
-    height: 40,
-    fontSize: 12, // 폰트 크기 설정
   },
 });
