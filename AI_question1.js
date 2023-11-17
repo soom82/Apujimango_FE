@@ -145,7 +145,7 @@ export default function App() {
         <View
           style={{
             width: "100%",
-            height: 47,
+            height: 85,
             backgroundColor: "#F6F6F6",
             elevation: 40,
             flexDirection: "row",
@@ -156,16 +156,16 @@ export default function App() {
             style={{ width: 18, height: 18, marginLeft: 10, marginTop: 15 }}
           />
 
-          <Text
+          <TextInput
+            placeholder="입력하세요."
+            placeholderTextColor={"#BCBCBC"}
             style={{
-              color: "#BCBCBC",
+              color: "black",
               fontSize: 13,
               marginLeft: 15,
-              marginTop: 15,
+              marginTop: -35,
             }}
-          >
-            입력하세요.
-          </Text>
+          />
 
           <Image
             source={require("./assets/send.png")}

@@ -121,41 +121,42 @@ export default function App() {
         </ScrollView>
       </View>
 
-      <View
-        style={{
-          width: "100%",
-          height: 47,
-          backgroundColor: "#F6F6F6",
-          elevation: 30,
-          flexDirection: "row",
-        }}
-      >
-        <Image
-          source={require("./assets/plus.png")}
-          style={{ width: 18, height: 18, marginLeft: 10, marginTop: 15 }}
-        />
-
-        <Text
+      <View style={{ elevation: 100 }}>
+        <View
           style={{
-            color: "#BCBCBC",
-            fontSize: 13,
-            marginLeft: 15,
-            marginTop: 15,
+            width: "100%",
+            height: 85,
+            backgroundColor: "#F6F6F6",
+            elevation: 40,
+            flexDirection: "row",
           }}
         >
-          입력하세요.
-        </Text>
+          <Image
+            source={require("./assets/plus.png")}
+            style={{ width: 18, height: 18, marginLeft: 10, marginTop: 15 }}
+          />
 
-        <Image
-          source={require("./assets/send.png")}
-          style={{
-            width: 30,
-            height: 30,
+          <TextInput
+            placeholder="입력하세요."
+            placeholderTextColor={"#BCBCBC"}
+            style={{
+              color: "black",
+              fontSize: 13,
+              marginLeft: 15,
+              marginTop: -35,
+            }}
+          />
 
-            marginLeft: 240,
-            marginTop: 8,
-          }}
-        />
+          <Image
+            source={require("./assets/send.png")}
+            style={{
+              width: 30,
+              height: 30,
+              marginLeft: 240,
+              marginTop: 8,
+            }}
+          />
+        </View>
       </View>
     </View>
   );
