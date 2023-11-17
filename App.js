@@ -142,16 +142,17 @@ export default function App() {
               marginTop: -35,
             }}
           />
-
-          <Image
-            source={require("./assets/send.png")}
-            style={{
-              width: 30,
-              height: 30,
-              marginLeft: 240,
-              marginTop: 8,
-            }}
-          />
+          <TouchableOpacity>
+            <Image
+              source={require("./assets/send.png")}
+              style={{
+                width: 30,
+                height: 30,
+                marginLeft: 240,
+                marginTop: 8,
+              }}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </KeyboardAwareScrollView>
