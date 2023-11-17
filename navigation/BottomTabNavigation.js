@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Iconify } from "react-native-iconify";
 
 import Home from "../screens/Home";
+import Child_Management from "../screens/Child_Management";
 import Food_Chatbot from "../screens/Food_Chatbot";
 import Medicine_Analysis from "../screens/Medicine_Analysis";
 import AI_Question from "../screens/AI_Question";
@@ -18,6 +19,23 @@ import Disease_Encyclopedia2 from "../screens/Disease_Encyclopedia2";
 
 const BottomTabNavigator = createBottomTabNavigator();
 const StackNavigator = createStackNavigator();
+
+const Home_Stack = () => {
+  return (
+    <StackNavigator.Navigator>
+      <StackNavigator.Screen
+        name="홈1"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <StackNavigator.Screen
+        name="아이 관리"
+        component={Child_Management}
+        options={{ headerShown: false }}
+      />
+    </StackNavigator.Navigator>
+  );
+};
 
 const Disease_Encyclopedia_Stack = () => {
   return (
@@ -46,7 +64,7 @@ const BottomTabNavigation = () => {
     >
       <BottomTabNavigator.Screen
         name="홈"
-        component={Home}
+        component={Home_Stack}
         options={{
           tabBarIcon: () => <Iconify icon="lucide:baby" size={24} />,
           // headerRight: (props) => <AlertButton {...props} />,
