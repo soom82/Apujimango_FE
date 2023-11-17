@@ -4,24 +4,11 @@ import {
   Text,
   View,
   Image,
-  Button,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
 
 export default function App() {
-  const [searchText, setSearchText] = useState("");
-
-  const tableData = {
-    tableHead: ["Head", "Head2", "Head3", "Head4", "Head5"],
-    tableData: [
-      ["감염성질환", "건강증진", "귀코목질환", "근골격질환", "눈질환"],
-      ["뇌신경정신질환", "소아청소년질환", "소화기질환", "순환기질환"],
-      ["신장비뇨기질환", "여성질환", "유방내분비질환", "유전질환", "응급질환"],
-      ["종양혈액질환", "치과질환", "피부질환", "호흡기질환", "기타"],
-    ],
-  };
-
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row" }}>
@@ -123,7 +110,7 @@ export default function App() {
               fontSize: 16,
             }}
           >
-            우리 아이1의 레포트 분석 결과예요.{" "}
+            김꾸꾸 의 레포트 분석 결과예요.{" "}
           </Text>
 
           <ScrollView style={{ height: 1000 }}>
@@ -158,7 +145,7 @@ export default function App() {
                   fontWeight: "bold",
                 }}
               >
-                [감기] 콧물 증상이 있어요.
+                [비염] 코가 막혀 호흡이 불편해요!
               </Text>
             </View>
             <View
@@ -192,15 +179,15 @@ export default function App() {
                   fontWeight: "bold",
                 }}
               >
-                [감기] 미열이 있어요.
+                [비염] 맑은 콧물이 나와요!
               </Text>
             </View>
 
             <View
               style={{
                 width: "80%",
-                marginBottom: 30,
-                marginTop: 30,
+                marginBottom: 20,
+                marginTop: 20,
                 borderColor: "#D3D3D3",
                 marginLeft: 40,
                 borderWidth: 0.3,
@@ -218,33 +205,31 @@ export default function App() {
                 alignItems: "center",
                 flexDirection: "row",
                 marginLeft: "10%",
-                marginTop: 10,
+                marginTop: 20,
                 width: "80%",
                 height: 80,
                 backgroundColor: "#ffeacc",
                 borderRadius: 15,
               }}
             >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-            </View>
-
-            <View
-              style={{
-                alignItems: "center",
-                flexDirection: "row",
-                marginLeft: "10%",
-                marginTop: 10,
-                width: "80%",
-                height: 80,
-                backgroundColor: "#e0d1ff",
-                borderRadius: 15,
-              }}
-            >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
+              <View style={{ paddingLeft: 20 }}>
+                <Image
+                  style={{ width: 70, height: 70 }}
+                  source={require("./assets/report_food_milk.png")}
+                ></Image>
+              </View>
+              <View style={{ paddingLeft: 25 }}>
+                <Image
+                  style={{ width: 60, height: 60 }}
+                  source={require("./assets/report_food_icecream.png")}
+                ></Image>
+              </View>
+              <View style={{ paddingLeft: 30 }}>
+                <Image
+                  style={{ width: 70, height: 70 }}
+                  source={require("./assets/report_food_cheese.png")}
+                ></Image>
+              </View>
             </View>
 
             <View
@@ -259,9 +244,24 @@ export default function App() {
                 borderRadius: 15,
               }}
             >
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
-              <Text style={{ paddingLeft: 20, fontSize: 50 }}> 🤒</Text>
+              <View style={{ paddingLeft: 20 }}>
+                <Image
+                  style={{ width: 70, height: 70 }}
+                  source={require("./assets/report_food_milk.png")}
+                ></Image>
+              </View>
+              <View style={{ paddingLeft: 25 }}>
+                <Image
+                  style={{ width: 60, height: 60 }}
+                  source={require("./assets/report_food_icecream.png")}
+                ></Image>
+              </View>
+              <View style={{ paddingLeft: 30 }}>
+                <Image
+                  style={{ width: 70, height: 70 }}
+                  source={require("./assets/report_food_cheese.png")}
+                ></Image>
+              </View>
             </View>
           </ScrollView>
         </View>
@@ -275,28 +275,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     backgroundColor: "#A1E6EB",
-  },
-  searchBarContainer: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    borderBottomWidth: 0,
-    borderTopWidth: 0,
-    borderRadius: 20,
-    width: "90%",
-    height: 65,
-  },
-  searchBarInputContainer: {
-    backgroundColor: "white",
-    borderRadius: 20,
-    borderColor: "gray",
-    elevation: 10,
-    width: "100%",
-    height: 35,
-    marginVertical: 10,
-  },
-
-  text: {
-    height: 40,
-    fontSize: 12, // 폰트 크기 설정
   },
 });
