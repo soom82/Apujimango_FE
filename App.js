@@ -5,17 +5,17 @@ import {
   Text,
   View,
   Image,
-  Button,
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  KeyboardAvoidingView,
 } from "react-native";
-import { SearchBar } from "react-native-elements";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
       <View>
         <Text
           style={{
@@ -52,13 +52,17 @@ export default function App() {
       </View>
 
       <View>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          keyboardShouldPersistTaps="always"
+        >
           <View
             style={{
               flexDirection: "row",
               marginLeft: 15,
               marginTop: 20,
-              marginBottom: 20,
+              marginBottom: 16,
               height: 30,
             }}
           >
@@ -117,7 +121,7 @@ export default function App() {
         <View
           style={{
             width: "100%",
-            height: 47,
+            height: 85,
             backgroundColor: "#F6F6F6",
             elevation: 40,
             flexDirection: "row",
@@ -128,16 +132,16 @@ export default function App() {
             style={{ width: 18, height: 18, marginLeft: 10, marginTop: 15 }}
           />
 
-          <Text
+          <TextInput
+            placeholder="입력하세요."
+            placeholderTextColor={"#BCBCBC"}
             style={{
-              color: "#BCBCBC",
+              color: "black",
               fontSize: 13,
               marginLeft: 15,
-              marginTop: 15,
+              marginTop: -35,
             }}
-          >
-            입력하세요.
-          </Text>
+          />
 
           <Image
             source={require("./assets/send.png")}
@@ -150,7 +154,7 @@ export default function App() {
           />
         </View>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
@@ -159,28 +163,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: "10%",
     backgroundColor: "#F6F6F6",
-  },
-  searchBarContainer: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    borderBottomWidth: 0,
-    borderTopWidth: 0,
-    borderRadius: 20,
-    width: "90%",
-    height: 65,
-  },
-  searchBarInputContainer: {
-    backgroundColor: "white",
-    borderRadius: 20,
-    borderColor: "gray",
-    elevation: 10,
-    width: "100%",
-    height: 35,
-    marginVertical: 10,
-  },
-
-  text: {
-    height: 40,
-    fontSize: 12, // 폰트 크기 설정
   },
 });
