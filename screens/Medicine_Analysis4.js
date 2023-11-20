@@ -95,7 +95,7 @@ export const Medicine_Analysis4 = ({ navigation }) => {
             </Text>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate("약 분석")}>
+          <TouchableOpacity onPress={() => navigation.navigate("약성분 분석")}>
             <View
               style={{
                 marginTop: 15,
