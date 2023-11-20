@@ -12,6 +12,8 @@ import Medicine_Analysis1 from "../screens/Medicine_Analysis1";
 import Medicine_Analysis2 from "../screens/Medicine_Analysis2";
 import Medicine_Analysis3 from "../screens/Medicine_Analysis3";
 import Medicine_Analysis4 from "../screens/Medicine_Analysis4";
+import Medicine_Analysis5 from "../screens/Medicine_Analysis5";
+import Medicine_Analysis6 from "../screens/Medicine_Analysis6";
 import AI_Question from "../screens/AI_Question";
 import Disease_Encyclopedia1 from "../screens/Disease_Encyclopedia1";
 import Disease_Encyclopedia2 from "../screens/Disease_Encyclopedia2";
@@ -62,6 +64,16 @@ const Medicine_Analysis_Stack = () => {
       <StackNavigator.Screen
         name="중간 알림"
         component={Medicine_Analysis4}
+        options={{ headerShown: false }}
+      />
+      <StackNavigator.Screen
+        name="약성분 분석"
+        component={Medicine_Analysis5}
+        options={{ headerShown: false }}
+      />
+      <StackNavigator.Screen
+        name="음식 분석"
+        component={Medicine_Analysis6}
         options={{ headerShown: false }}
       />
     </StackNavigator.Navigator>
