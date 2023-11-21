@@ -73,7 +73,7 @@ export default function App() {
           alignItems: "center",
         }}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
+        <TouchableOpacity onPress={() => navigation.navigate("")}>
           <View
             style={{
               flexDirection: "row",
@@ -109,7 +109,7 @@ export default function App() {
             </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("app2.js")}>
+        <TouchableOpacity onPress={() => navigation.navigate("")}>
           <View
             style={{
               flexDirection: "row",
@@ -150,7 +150,7 @@ export default function App() {
         style={{
           position: "absolute",
           top: 246,
-          bottom: 506,
+          bottom: 554,
           left: 152,
           right: 152,
           backgroundColor: "#8CDCE2",
