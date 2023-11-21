@@ -156,7 +156,7 @@ export const Home = ({ navigation }) => {
                 fontSize: 14,
               }}
             >
-              >> 아이 등록하기
+              아이 등록하기
             </Text>
             <Image
               source={require("../assets/bag.png")}
